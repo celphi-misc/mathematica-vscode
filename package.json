@@ -1,0 +1,26 @@
+{
+    "name": "mathematica",
+    "displayName": "Mathematica",
+    "description": "Mathematica (Wolfram Language) support.",
+    "version": "0.0.1",
+    "publisher": "celestialphineas",
+    "engines": {
+        "vscode": "^1.5.0"
+    },
+    "categories": [
+        "Languages"
+    ],
+    "contributes": {
+        "languages": [{
+            "id": "mathematica",
+            "aliases": ["Mathematica", "mathematica"],
+            "extensions": [".m",".wl"],
+            "configuration": "./language-configuration.json"
+        }],
+        "grammars": [{
+            "language": "mathematica",
+            "scopeName": "",
+            "path": "./syntaxes/mathematica.tmLanguage.json"
+        }]
+    }
+}
