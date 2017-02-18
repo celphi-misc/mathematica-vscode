@@ -13,13 +13,13 @@
     "contributes": {
         "languages": [{
             "id": "mathematica",
-            "aliases": ["Mathematica", "mathematica"],
+            "aliases": ["Mathematica", "Mathematica", "Wolfram Language", "wolfram language"],
             "extensions": [".m",".wl"],
             "configuration": "./language-configuration.json"
         }],
         "grammars": [{
             "language": "mathematica",
-            "scopeName": "",
+            "scopeName": "source.mathematica",
             "path": "./syntaxes/mathematica.tmLanguage.json"
         }]
     }
