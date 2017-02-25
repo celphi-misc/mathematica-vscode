@@ -37,35 +37,40 @@
             "patterns": [
                 {
                     "comment": "Standard form",
-                    "match": "\\b([0-9\\.]*)([A-Za-z$][A-Za-z0-9$]*)\\s*(\\[)(?!\\[)",
+                    "match": "([0-9\\.]*)([A-Za-z$][A-Za-z0-9$]*`)?([A-Za-z$][A-Za-z0-9$]*)\\s*(\\[)(?!\\[)",
                     "captures": {
                         "1": {"name": "constant.numeric"},
-                        "2": {"name": "support.function"}
+                        "2": {"name": "support.class"},
+                        "3": {"name": "support.function"}
                     }
                 },
                 {
                     "comment": "Prefix form",
-                    "match": "\\b([A-Za-z$][A-Za-z0-9$]*)\\s*(@)",
+                    "match": "([0-9\\.]*)([A-Za-z$][A-Za-z0-9$]*`)?([A-Za-z$][A-Za-z0-9$]*)\\s*(@)",
                     "captures": {
-                        "1": {"name": "support.function"},
-                        "2": {"name": "keyword.operator"}
+                        "1": {"name": "constant.numeric"},
+                        "2": {"name": "support.class"},
+                        "3": {"name": "support.function"},
+                        "4": {"name": "keyword.operator"}
                     }
                 },
                 {
                     "comment": "Infix form",
-                    "match": "(~)\\s*([A-Za-z$][A-Za-z0-9$]*)\\s*(~)\\b",
+                    "match": "\\s*(~)\\s*([A-Za-z$][A-Za-z0-9$]*`)?([A-Za-z$][A-Za-z0-9$]*)\\s*(~)\\b\\s*",
                     "captures": {
                         "1": {"name": "keyword.operator"},
-                        "2": {"name": "support.function"},
-                        "3": {"name": "keyword.operator"}
+                        "2": {"name": "support.class"},
+                        "3": {"name": "support.function"},
+                        "4": {"name": "keyword.operator"}
                     }
                 },
                 {
                     "comment": "Postfix form",
-                    "match": "(//)\\s*([A-Za-z$][A-Za-z0-9$]*)\\b",
+                    "match": "(//)\\s*([A-Za-z$][A-Za-z0-9$]*`)?([A-Za-z$][A-Za-z0-9$]*)\\b",
                     "captures": {
                         "1": {"name": "keyword.operator"},
-                        "2": {"name": "support.function"}
+                        "2": {"name": "support.class"},
+                        "3": {"name": "support.function"}
                     }
                 }
             ]
@@ -75,42 +80,52 @@
             "patterns": [
                 {
                     "comment": "Compositions of functions",
-                    "match": "([A-Za-z$][A-Za-z0-9$]*)\\s*(@\\*|/\\*)\\s*([A-Za-z$][A-Za-z0-9$]*)",
+                    "match": "([A-Za-z$][A-Za-z0-9$]*`)?([A-Za-z$][A-Za-z0-9$]*)\\s*(@\\*|/\\*)\\s*([A-Za-z$][A-Za-z0-9$]*`)?([A-Za-z$][A-Za-z0-9$]*)",
                     "captures": {
-                        "1": {"name": "support.function"},
-                        "2": {"name": "keyword.operator"},
-                        "3": {"name": "support.function"}}
+                        "1": {"name": "support.class"},
+                        "2": {"name": "support.function"},
+                        "3": {"name": "keyword.operator"},
+                        "4": {"name": "support.class"},
+                        "5": {"name": "support.function"}}
                 },
                 {
                     "comment": "MapAll expression",
-                    "match": "\\b([A-Za-z$][A-Za-z0-9$]*)\\s*(//@)",
+                    "match": "([0-9\\.]*)([A-Za-z$][A-Za-z0-9$]*`)?([A-Za-z$][A-Za-z0-9$]*)\\s*(//@)",
                     "captures": {
-                        "1": {"name": "support.function"},
-                        "2": {"name": "keyword.operator"}
+                        "1": {"name": "constant.numeric"},
+                        "2": {"name": "support.class"},
+                        "3": {"name": "support.function"},
+                        "4": {"name": "keyword.operator"}
                     }
                 },
                 {
                     "comment": "Map expression",
-                    "match": "\\b([A-Za-z$][A-Za-z0-9$]*)\\s*(/@)",
+                    "match": "([0-9\\.]*)([A-Za-z$][A-Za-z0-9$]*`)?([A-Za-z$][A-Za-z0-9$]*)\\s*(/@)",
                     "captures": {
-                        "1": {"name": "support.function"},
-                        "2": {"name": "keyword.operator"}
+                        "1": {"name": "constant.numeric"},
+                        "2": {"name": "support.class"},
+                        "3": {"name": "support.function"},
+                        "4": {"name": "keyword.operator"}
                     }
                 },
                 {
                     "comment": "Apply expression",
-                    "match": "\\b([A-Za-z$][A-Za-z0-9$]*)\\s*(@@@)",
+                    "match": "([0-9\\.]*)([A-Za-z$][A-Za-z0-9$]*`)?([A-Za-z$][A-Za-z0-9$]*)\\s*(@@@)",
                     "captures": {
-                        "1": {"name": "support.function"},
-                        "2": {"name": "keyword.operator"}
+                        "1": {"name": "constant.numeric"},
+                        "2": {"name": "support.class"},
+                        "3": {"name": "support.function"},
+                        "4": {"name": "keyword.operator"}
                     }
                 },
                 {
                     "comment": "Apply expression",
-                    "match": "\\b([A-Za-z$][A-Za-z0-9$]*)\\s*(@@)",
+                    "match": "([0-9\\.]*)([A-Za-z$][A-Za-z0-9$]*`)?([A-Za-z$][A-Za-z0-9$]*)\\s*(@@)",
                     "captures": {
-                        "1": {"name": "support.function"},
-                        "2": {"name": "keyword.operator"}
+                        "1": {"name": "constant.numeric"},
+                        "2": {"name": "support.class"},
+                        "3": {"name": "support.function"},
+                        "4": {"name": "keyword.operator"}
                     }
                 }
             ]
@@ -120,7 +135,7 @@
                 {
                     "match": "\\b([A-Za-z$][A-Za-z0-9$]*)\\s*(::)\\s*([A-Za-z$][A-Za-z0-9$]*)\\b",
                     "captures": {
-                        "1": {"name": "support.type"},
+                        "1": {"name": "entity.name.function"},
                         "2": {"name": "keyword.operator"},
                         "3": {"name": "string.unquoted"}
                     }
