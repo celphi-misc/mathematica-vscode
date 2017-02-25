@@ -10,7 +10,27 @@
 
 ### 0.0.2
 
+Refactoring based on *Mathematica Book*.
 
+#### Added
+
+- Brackets, auto-closing pairs and surrounding pairs.
+- Function highlights.
+- Messages.
+- Patterns.
+
+#### To do
+
+- Tests.
+- : for default values in patterns.
+- Pure functions.
+- Handle \` mark.
+- \\[*str*] expression.
+- Rules.
+- Handle association symbol as a keyword symbol? And lists?
+- Built-in properties.
+- Built-in special symbols.
+- Other Unicode symbols.
 
  ### ~~0.0.1~~
 
