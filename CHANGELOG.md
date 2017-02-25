@@ -18,13 +18,13 @@ Refactoring based on *Mathematica Book*.
 - Function highlights.
 - Messages.
 - Patterns.
+- Added support for context highlight.
+- Definition query.
 
 #### To do
 
-- Tests.
 - : for default values in patterns.
 - Pure functions.
-- Handle \` mark.
 - \\[*str*] expression.
 - Rules.
 - Handle association symbol as a keyword symbol? And lists?
