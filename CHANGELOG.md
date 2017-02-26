@@ -8,6 +8,10 @@
 
 ## *Unreleased*
 
+### 0.1.0
+
+Done for most of the highlight.
+
 ### 0.0.2
 
 Refactoring based on *Mathematica Book*.
@@ -23,14 +27,15 @@ Refactoring based on *Mathematica Book*.
 - Pure functions.
 - Special characters.
 - Rules and properties.
+- Support for most built-in operators that make sense.
 
-#### To do
+#### ~~To do~~ (Finished)
 
-- : for default values in patterns.
-- Handle association symbol as a keyword symbol? And lists?
-- Built-in properties.
-- Built-in special symbols.
-- Other Unicode symbols.
+- ~~: for default values in patterns.~~
+- ~~Handle association symbol as a keyword symbol? And lists?~~
+- ~~Built-in properties.~~
+- ~~Built-in special symbols.~~
+- ~~Other Unicode symbols.~~
 
  ### ~~0.0.1~~
 

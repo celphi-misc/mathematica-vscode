@@ -26,6 +26,7 @@
         "expressions": {
             "patterns": [
                 {"include": "#slot"},
+                {"include": "#out_reference"},
                 {"include": "#numbers"},
                 {"include": "#other_functions"},
                 {"include": "#character_operators"},
@@ -158,6 +159,14 @@
                 },
                 {
                     "match": "#[A-Za-z0-9\\$]*",
+                    "name": "variable.parameter"
+                }
+            ]
+        },
+        "out_reference": {
+            "patterns": [
+                {
+                    "match": "%?(%*|[0-9]*)",
                     "name": "variable.parameter"
                 }
             ]
@@ -361,6 +370,11 @@
                     "name": "support.function"
                 },
                 {
+                    "comment": "String expression",
+                    "match": "~~",
+                    "name": "keyword.operator.rest"
+                },
+                {
                     "match": "~",
                     "name": "keyword.operator"
                 },
@@ -410,14 +424,39 @@
                     "name": "variable.parameter"
                 },
                 {
+                    "comment": "Compound operators",
+                    "match": "(\\+|-|\\*|/)=",
+                    "name": "keyword.operator.assignment.compound"
+                },
+                {
+                    "comment": "Assignments",
+                    "match": "(:=|\\^=|\\^:=|/:|=\\.|=)",
+                    "name": "keyword.operator.assignment"
+                },
+                {
                     "comment": "Multiply",
                     "match": "(\\*|\\.|×)",
                     "name": "keyword.operator.arithmetic"
                 },
                 {
+                    "comment": "Condition",
+                    "match": "/;",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Replacement",
+                    "match": "(//\\.|/\\.)",
+                    "name": "keyword.operator.rest"
+                },
+                {
                     "comment": "Division",
                     "match": "(/|\\\\/|÷)",
                     "name": "keyword.operator.arithmetic"
+                },
+                {
+                    "comment": "Rule",
+                    "match": "->|→|:>|⧴",
+                    "name": "keyword.operator"
                 },
                 {
                     "comment": "Plus and minus",
@@ -497,6 +536,16 @@
                 {
                     "comment": "Default value of a pattern",
                     "match": ":",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Colon",
+                    "match": "∶",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Therefore and because",
+                    "match": "∴|∵",
                     "name": "keyword.operator.rest"
                 }
             ]
@@ -597,13 +646,45 @@
                     "comment": "Such that",
                     "match": "\\\\\\[SuchThat\\]",
                     "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Colon",
+                    "match": "\\\\\\[Colon\\]",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Vertical Separator",
+                    "match": "\\\\\\[VerticalSeparator\\]",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Rule",
+                    "match": "\\\\\\[(Rule|RuleDelayed)\\]",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Therefore and because",
+                    "match": "\\\\\\[(Therefore|Because)\\]",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Function map",
+                    "match": "\\\\\\[Function\\]",
+                    "name": "keyword.operator"
                 }
             ]
         },
         "file_operations": {
             "patterns": [
                 {
-                    "match": "(<<)(\\S*)\\b",
+                    "match": "(<<)\\s*(\\S*)\\b",
+                    "captures": {
+                        "1": {"name": "keyword.operator.rest"},
+                        "2": {"name": "string.unquoted"}
+                    }
+                },
+                {
+                    "match": "(>>>|>>)\\s*(\\S*)\\b",
                     "captures": {
                         "1": {"name": "keyword.operator.rest"},
                         "2": {"name": "string.unquoted"}

@@ -2,7 +2,7 @@
     "name": "mathematica",
     "displayName": "Mathematica",
     "description": "Mathematica (Wolfram Language) support.",
-    "version": "0.0.2",
+    "version": "0.1.0",
     "publisher": "celestialphineas",
     "engines": {
         "vscode": "^1.5.0"
