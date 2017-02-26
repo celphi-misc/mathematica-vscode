@@ -351,7 +351,7 @@
                     "name": "keyword.operator"
                 },
                 {
-                    "comment": "Logic and operator",
+                    "comment": "Logical and",
                     "match": "&&",
                     "name": "keyword.operator.logical"
                 },
@@ -405,6 +405,11 @@
                     "name": "keyword.operator.rest"
                 },
                 {
+                    "comment": "Repeated",
+                    "match": "\\.\\.\\.|\\.\\.",
+                    "name": "variable.parameter"
+                },
+                {
                     "comment": "Multiply",
                     "match": "(\\*|\\.|×)",
                     "name": "keyword.operator.arithmetic"
@@ -452,11 +457,46 @@
                 {
                     "comment": "Element and subset of",
                     "match": "∈|∉|⊂|⊃",
-                    "name": "keyword.operator.rest"
+                    "name": "keyword.operator.logical"
                 },
                 {
                     "comment": "Quantifiers",
                     "match": "∀|∃|∄",
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Not",
+                    "match": "!|¬",
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Other logical operators",
+                    "match": "∧|⊼|\\|\\||∨|⊽|⊻",
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Equivalence and implication",
+                    "match": "⧦|⥰",
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Tees",
+                    "match": "⊢|⊣|⊨|⊤|⊥|⫤",
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Such that",
+                    "match": "∍",
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Alternatives",
+                    "match": "\\|",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Default value of a pattern",
+                    "match": ":",
                     "name": "keyword.operator.rest"
                 }
             ]
@@ -526,12 +566,37 @@
                 {
                     "comment": "Element and subset of",
                     "match": "\\\\\\[(Element|NotElement|Subset|Superset)\\]",
-                    "name": "keyword.operator.rest"
+                    "name": "keyword.operator.logical"
                 },
                 {
                     "comment": "Quantifiers",
                     "match": "\\\\\\[(ForAll|Exists|NotExists)\\]",
-                    "name": "keyword.operator.rest"
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Not",
+                    "match": "\\\\\\[Not\\]",
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Other logical operators",
+                    "match": "\\\\\\[(And|Nand|Xor|Xnor|Or|Nor)\\]",
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Equivalence and implication",
+                    "match": "\\\\\\[(Equivalent|Implies|RoundImplies)\\]",
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Tees",
+                    "match": "\\\\\\[(RightTee|DoubleRightTee|LeftTee|DoubleLeftTee|UpTee|DownTee)\\]",
+                    "name": "keyword.operator.logical"
+                },
+                {
+                    "comment": "Such that",
+                    "match": "\\\\\\[SuchThat\\]",
+                    "name": "keyword.operator.logical"
                 }
             ]
         },
