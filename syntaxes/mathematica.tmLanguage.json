@@ -6,8 +6,7 @@
         {"include": "#comments"},
         {"include": "#strings"},
         {"include": "#expressions"},
-        {"include": "#part"},
-        {"include": "#query"}
+        {"include": "#part"}
     ],
     "repository":{
         "comments": {
@@ -26,18 +25,20 @@
         "expressions": {
             "patterns": [
                 {"include": "#slot"},
-                {"include": "#character"},
                 {"include": "#numbers"},
                 {"include": "#other_functions"},
-                {"include": "#full_expr"},
+                {"include": "#character_operators"},
+                {"include": "#full_expression"},
                 {"include": "#message"},
                 {"include": "#pattern"},
+                {"include": "#query"},
                 {"include": "#rule"},
                 {"include": "#bracket_punctuations"},
+                {"include": "#character"},
                 {"include": "#operators"}
             ]
         },
-        "full_expr": {
+        "full_expression": {
             "comment": "Full expression forms",
             "patterns": [
                 {
@@ -360,6 +361,60 @@
                 },
                 {
                     "match": "~",
+                    "name": "keyword.operator"
+                },
+                {
+                    "comment": "Fractorial",
+                    "match": "!",
+                    "name": "keyword.operator"
+                },
+                {
+                    "comment": "Derivative",
+                    "match": "'",
+                    "name": "keyword.operator"
+                },
+                {
+                    "comment": "String join",
+                    "match": "<>",
+                    "name": "keyword.operator"
+                },
+                {
+                    "comment": "Power subscript",
+                    "match": "\\\\(\\^|%)",
+                    "name": "keyword.operator"
+                },
+                {
+                    "comment": "Power",
+                    "match": "\\^",
+                    "name": "keyword.operator"
+                },
+                {
+                    "comment": "Sqrt",
+                    "match": "√|\\\\@",
+                    "name": "keyword.operator"
+                },
+                {
+                    "comment": "Calculas operators",
+                    "match": "(∫|ⅆ|∂|∇)",
+                    "name": "keyword.operator"
+                }
+            ]
+        },
+        "character_operators": {
+            "patterns": [
+                {
+                    "comment": "Matrix operators",
+                    "match": "\\\\\\[(Conjugate|Transpose|ConjugateTranspose|HermitianConjugate)\\]",
+                    "name": "keyword.operator"
+                },
+                {
+                    "comment": "Sqrt",
+                    "match": "\\\\\\[(Sqrt)\\]",
+                    "name": "keyword.operator"
+                },
+                {
+                    "comment": "Calculas operators",
+                    "match": "\\\\\\[(Integral|DifferentialD|PartialD|Del|DiscreteShift|DiscreteRatio|DifferenceDelta)\\]",
                     "name": "keyword.operator"
                 }
             ]
