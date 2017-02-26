@@ -5,6 +5,7 @@
     "patterns": [
         {"include": "#comments"},
         {"include": "#strings"},
+        {"include": "#file_operations"},
         {"include": "#expressions"},
         {"include": "#part"}
     ],
@@ -321,13 +322,13 @@
             "patterns": [
                 {
                     "comment": "Get operator",
-                    "match": "\\<\\<",
-                    "name": "keyword.operator"
+                    "match": "<<",
+                    "name": "keyword.operator.rest"
                 },
                 {
                     "comment": "Script control operators",
                     "match": "\\\\(&|\\+|%|\\_|!)",
-                    "name": "keyword.operator"
+                    "name": "keyword.operator.rest"
                 },
                 {
                     "comment": "Pattern test",
@@ -352,7 +353,7 @@
                 {
                     "comment": "Logic and operator",
                     "match": "&&",
-                    "name": "keyword.operator"
+                    "name": "keyword.operator.logical"
                 },
                 {
                     "comment": "& sign for pure functions",
@@ -366,37 +367,72 @@
                 {
                     "comment": "Fractorial",
                     "match": "!",
-                    "name": "keyword.operator"
+                    "name": "keyword.operator.arithmetic"
                 },
                 {
                     "comment": "Derivative",
                     "match": "'",
-                    "name": "keyword.operator"
+                    "name": "keyword.operator.rest"
                 },
                 {
                     "comment": "String join",
                     "match": "<>",
-                    "name": "keyword.operator"
+                    "name": "keyword.operator.rest"
                 },
                 {
                     "comment": "Power subscript",
                     "match": "\\\\(\\^|%)",
-                    "name": "keyword.operator"
+                    "name": "keyword.operator.arithmetic"
                 },
                 {
                     "comment": "Power",
                     "match": "\\^",
-                    "name": "keyword.operator"
+                    "name": "keyword.operator.arithmetic"
                 },
                 {
                     "comment": "Sqrt",
                     "match": "√|\\\\@",
-                    "name": "keyword.operator"
+                    "name": "keyword.operator.arithmetic"
                 },
                 {
                     "comment": "Calculas operators",
-                    "match": "(∫|ⅆ|∂|∇)",
-                    "name": "keyword.operator"
+                    "match": "∫|ⅆ|∂|∇",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Other operators, undefined",
+                    "match": "□|◦|⊙",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Multiply",
+                    "match": "(\\*|\\.|×)",
+                    "name": "keyword.operator.arithmetic"
+                },
+                {
+                    "comment": "Division",
+                    "match": "(/|\\\\/|÷)",
+                    "name": "keyword.operator.arithmetic"
+                },
+                {
+                    "comment": "Plus and minus",
+                    "match": "(-|\\+|±|∓)",
+                    "name": "keyword.operator.arithmetic"
+                },
+                {
+                    "comment": "Product",
+                    "match": "∏",
+                    "name": "keyword.operator.arithmetic"
+                },
+                {
+                    "comment": "Yet another wave of special characters, and undefined in System`",
+                    "match": "≀|∐|⌢|⌣|⊕|⊖",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Set operators",
+                    "match": "⋂|⋃",
+                    "name": "keyword.operator.rest"
                 }
             ]
         },
@@ -410,12 +446,58 @@
                 {
                     "comment": "Sqrt",
                     "match": "\\\\\\[(Sqrt)\\]",
-                    "name": "keyword.operator"
+                    "name": "keyword.operator.arithmetic"
                 },
                 {
                     "comment": "Calculas operators",
                     "match": "\\\\\\[(Integral|DifferentialD|PartialD|Del|DiscreteShift|DiscreteRatio|DifferenceDelta)\\]",
-                    "name": "keyword.operator"
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Other operators, undefined",
+                    "match": "\\\\\\[(Square|SmallCircle|CircleDot)\\]",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Multiply",
+                    "match": "\\\\\\[(Cross|Times|Star)\\]",
+                    "name": "keyword.operator.arithmetic"
+                },
+                {
+                    "comment": "Division",
+                    "match": "\\\\\\[(Divide)\\]",
+                    "name": "keyword.operator.arithmetic"
+                },
+                {
+                    "comment": "Plus and minus",
+                    "match": "\\\\\\[(PlusMinus|MinusPlus)\\]",
+                    "name": "keyword.operator.arithmetic"
+                },
+                {
+                    "comment": "Product",
+                    "match": "\\\\\\[(Product)\\]",
+                    "name": "keyword.operator.arithmetic"
+                },
+                {
+                    "comment": "Yet another wave of special characters, and undefined in System`",
+                    "match": "\\\\\\[(VerticalTilde|Coproduct|Cap|Cup|CirclePlus|CircleMinus)\\]",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Set operators",
+                    "match": "\\\\\\[(Intersection|Union)\\]",
+                    "name": "keyword.operator.rest"
+                }
+            ]
+        },
+        "file_operations": {
+            "patterns": [
+                {
+                    "match": "(<<)(\\S*)\\b",
+                    "captures": {
+                        "1": {"name": "keyword.operator.rest"},
+                        "2": {"name": "string.unquoted"}
+                    }
                 }
             ]
         }
