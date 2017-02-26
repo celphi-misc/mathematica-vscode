@@ -433,6 +433,11 @@
                     "comment": "Set operators",
                     "match": "⋂|⋃",
                     "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Comparisons",
+                    "match": "(==|!=|>=|<=|>|<|≠|≥|⩾|≤|⩽)",
+                    "name": "keyword.operator.comparison"
                 }
             ]
         },
@@ -487,6 +492,11 @@
                     "comment": "Set operators",
                     "match": "\\\\\\[(Intersection|Union)\\]",
                     "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Comparisons",
+                    "match": "\\\\\\[(Equal|LongEqual|NotEqual|GreaterEqual|GreaterSlantEqual|LessEqual|LessSlantEqual)\\]",
+                    "name": "keyword.operator.comparison"
                 }
             ]
         },
