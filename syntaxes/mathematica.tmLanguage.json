@@ -453,6 +453,11 @@
                     "comment": "Element and subset of",
                     "match": "∈|∉|⊂|⊃",
                     "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Quantifiers",
+                    "match": "∀|∃|∄",
+                    "name": "keyword.operator.rest"
                 }
             ]
         },
@@ -520,7 +525,13 @@
                 },
                 {
                     "comment": "Element and subset of",
-                    "match": "\\\\\\[(Element|NotElement|Subset|Superset)\\]"
+                    "match": "\\\\\\[(Element|NotElement|Subset|Superset)\\]",
+                    "name": "keyword.operator.rest"
+                },
+                {
+                    "comment": "Quantifiers",
+                    "match": "\\\\\\[(ForAll|Exists|NotExists)\\]",
+                    "name": "keyword.operator.rest"
                 }
             ]
         },
