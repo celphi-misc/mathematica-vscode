@@ -32,6 +32,7 @@
                 {"include": "#full_expr"},
                 {"include": "#message"},
                 {"include": "#pattern"},
+                {"include": "#rule"},
                 {"include": "#operators"}
             ]
         },
@@ -280,6 +281,17 @@
                 {
                     "match": "\\\\\\[[(A-Za-z)]*\\]",
                     "name": "variable.other.object"
+                }
+            ]
+        },
+        "rule": {
+            "patterns": [
+                {
+                    "match": "([A-Za-z\\$][A-Za-z0-9\\$]*)\\s*(->|→|:>|⧴)",
+                    "captures": {
+                        "1": {"name": "support.variable.property"},
+                        "2": {"name": "keyword.operator"}
+                    }
                 }
             ]
         },
