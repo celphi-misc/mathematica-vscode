@@ -20,11 +20,11 @@ Refactoring based on *Mathematica Book*.
 - Patterns.
 - Added support for context highlight.
 - Definition query.
+- Pure functions.
 
 #### To do
 
 - : for default values in patterns.
-- Pure functions.
 - \\[*str*] expression.
 - Rules.
 - Handle association symbol as a keyword symbol? And lists?
