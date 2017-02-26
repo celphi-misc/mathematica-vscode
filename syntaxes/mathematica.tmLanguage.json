@@ -438,6 +438,11 @@
                     "comment": "Comparisons",
                     "match": "(==|!=|>=|<=|>|<|≠|≥|⩾|≤|⩽)",
                     "name": "keyword.operator.comparison"
+                },
+                {
+                    "comment": "Other comparisons",
+                    "match": "∥|∦",
+                    "name": "keyword.operator.comparison"
                 }
             ]
         },
@@ -496,6 +501,11 @@
                 {
                     "comment": "Comparisons",
                     "match": "\\\\\\[(Equal|LongEqual|NotEqual|GreaterEqual|GreaterSlantEqual|LessEqual|LessSlantEqual)\\]",
+                    "name": "keyword.operator.comparison"
+                },
+                {
+                    "comment": "Other comparisons",
+                    "match": "\\\\\\[(VerticalBar|NotVerticalBar|DoubleVerticalBar|NotDoubleVerticalBar)\\]",
                     "name": "keyword.operator.comparison"
                 }
             ]
