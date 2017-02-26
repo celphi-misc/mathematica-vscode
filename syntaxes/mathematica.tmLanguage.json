@@ -33,6 +33,7 @@
                 {"include": "#message"},
                 {"include": "#pattern"},
                 {"include": "#rule"},
+                {"include": "#bracket_punctuations"},
                 {"include": "#operators"}
             ]
         },
@@ -292,6 +293,26 @@
                         "1": {"name": "support.variable.property"},
                         "2": {"name": "keyword.operator"}
                     }
+                }
+            ]
+        },
+        "bracket_punctuations": {
+            "patterns": [
+                {
+                    "match": "\\{",
+                    "name": "punctuation.definition.list.begin"
+                },
+                {
+                    "match": "\\}",
+                    "name": "punctuation.definition.list.end"
+                },
+                {
+                    "match": "<\\|",
+                    "name": "punctuation.definition.dict.begin"
+                },
+                {
+                    "match": "\\|>",
+                    "name": "punctuation.definition.dict.end"
                 }
             ]
         },

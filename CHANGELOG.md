@@ -22,11 +22,11 @@ Refactoring based on *Mathematica Book*.
 - Definition query.
 - Pure functions.
 - Special characters.
+- Rules and properties.
 
 #### To do
 
 - : for default values in patterns.
-- Rules.
 - Handle association symbol as a keyword symbol? And lists?
 - Built-in properties.
 - Built-in special symbols.
