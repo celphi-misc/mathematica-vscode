@@ -435,6 +435,11 @@
                     "name": "keyword.operator.rest"
                 },
                 {
+                    "comment": "Same as",
+                    "match": "=(=|!)=",
+                    "name": "keyword.operator.comparison"
+                },
+                {
                     "comment": "Comparisons",
                     "match": "(==|!=|>=|<=|>|<|≠|≥|⩾|≤|⩽)",
                     "name": "keyword.operator.comparison"
