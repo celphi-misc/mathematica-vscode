@@ -21,11 +21,11 @@ Refactoring based on *Mathematica Book*.
 - Added support for context highlight.
 - Definition query.
 - Pure functions.
+- Special characters.
 
 #### To do
 
 - : for default values in patterns.
-- \\[*str*] expression.
 - Rules.
 - Handle association symbol as a keyword symbol? And lists?
 - Built-in properties.
