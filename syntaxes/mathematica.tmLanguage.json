@@ -6,7 +6,19 @@
         {"include": "#comments"},
         {"include": "#strings"},
         {"include": "#file_operations"},
-        {"include": "#expressions"},
+        {"include": "#slot"},
+        {"include": "#out_reference"},
+        {"include": "#numbers"},
+        {"include": "#other_functions"},
+        {"include": "#character_operators"},
+        {"include": "#full_expression"},
+        {"include": "#message"},
+        {"include": "#pattern"},
+        {"include": "#query"},
+        {"include": "#rule"},
+        {"include": "#bracket_punctuations"},
+        {"include": "#character"},
+        {"include": "#operators"},
         {"include": "#part"}
     ],
     "repository":{
@@ -18,26 +30,8 @@
                     "beginCaptures": {"0": {"name": "punctuation.definition.comment"}},
                     "end": "\\*\\)",
                     "endCaptures": {"0": {"name": "punctuation.definition.comment"}},
-                    "name": "comment.block",
-                    "patterns": [{"include": "$self"}]
+                    "name": "comment.block"
                 }
-            ]
-        },
-        "expressions": {
-            "patterns": [
-                {"include": "#slot"},
-                {"include": "#out_reference"},
-                {"include": "#numbers"},
-                {"include": "#other_functions"},
-                {"include": "#character_operators"},
-                {"include": "#full_expression"},
-                {"include": "#message"},
-                {"include": "#pattern"},
-                {"include": "#query"},
-                {"include": "#rule"},
-                {"include": "#bracket_punctuations"},
-                {"include": "#character"},
-                {"include": "#operators"}
             ]
         },
         "full_expression": {
@@ -166,7 +160,7 @@
         "out_reference": {
             "patterns": [
                 {
-                    "match": "%?(%*|[0-9]*)",
+                    "match": "%(%%*|[0-9]*)",
                     "name": "variable.parameter"
                 }
             ]
@@ -265,7 +259,6 @@
                     "end": "\\]\\]|〛",
                     "endCaptures": {"0": {"name": "keyword.operator"}},
                     "patterns": [
-                        {"include": "#expressions"},
                         {"include": "#span"},
                         {"include": "$self"}
                     ]
